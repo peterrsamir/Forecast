@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.howsweather.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_mapsFragment"
+            app:destination="@id/mapsFragment" >
+
+            <argument android:name="@string/toMap"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_alert"
+        android:name="com.example.howsweather.ui.alerts.AlertsFragment"
+        android:label="@string/alert_fragment"
+        tools:layout="@layout/alerts_fragment" />
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.howsweather.ui.settings.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/settings_fragment" />
+    <fragment
+        android:id="@+id/navigation_favourite"
+        android:name="com.example.howsweather.ui.favorite.FavoriteFragment"
+        android:label="@string/title_favourite"
+        tools:layout="@layout/favorite_fragment" >
+        <action
+            android:id="@+id/action_navigation_favourite_to_mapsFragment"
+            app:destination="@id/mapsFragment" >
+
+            <argument android:name="@string/toMap"
+                android:defaultValue="true"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/action_navigation_favourite_to_show"
+            app:destination="@id/show"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.howsweather.ui.map.MapsFragment"
+        android:label="@string/map"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/show"
+        android:name="com.example.howsweather.ui.show.Show"
+        android:label="@string/fragment_show"
+        tools:layout="@layout/fragment_show" />
+</navigation>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:gravity="center"
+        android:text="@string/how_s_weaher"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/splash"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_170sdp"
+        android:layout_below="@+id/comdeysplash"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/splash"
+        app:lottie_repeatCount="@integer/google_play_services_version" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/comdeysplash"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_130sdp"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/comedy_splash"
+        app:lottie_repeatCount="@integer/google_play_services_version" />
+
+</RelativeLayout>
